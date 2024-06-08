@@ -1,0 +1,6 @@
+# Activate 
+source python3-10_venv/bin/activate 
+
+# Run the app 
+
+flask run 
