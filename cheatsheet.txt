@@ -16,7 +16,9 @@ src/app.py
 export FLASK_APP=src/app.py  
 
 # Run the app 
-flask run 
+flask run
+
+# For local Dev you may python ./src/app.py for picking up Port:3000 
 
 # Steps for hosting on Heroku 
 pip install gunicorn 
