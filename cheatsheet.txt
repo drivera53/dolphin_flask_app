@@ -6,6 +6,7 @@ source python3-10_venv/bin/activate
 
 # Install Flask 
 pip install Flask 
+python -m pip install pika --upgrade
 
 # Create a source folder 
 mkdir src 
@@ -16,7 +17,9 @@ src/app.py
 export FLASK_APP=src/app.py  
 
 # Run the app 
-flask run 
+flask run
+
+# For local Dev you may python ./src/app.py for picking up Port:3000 
 
 # Steps for hosting on Heroku 
 pip install gunicorn 
@@ -26,3 +29,7 @@ pip freeze > requirements.txt
 
 # create a Procfile at the root of the directory.  
 echo "web: gunicorn src.app:app" > Procfile 
+
+#### Send a message - Producer - Window 2 - For Dev only, otherwise add new username in the UI.
+# This a offline script for sending two messages, you may replay this a you like.
+python src/utils/producer.py
