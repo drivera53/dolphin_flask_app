@@ -6,6 +6,7 @@ source python3-10_venv/bin/activate
 
 # Install Flask 
 pip install Flask 
+python -m pip install pika --upgrade
 
 # Create a source folder 
 mkdir src 
@@ -28,3 +29,7 @@ pip freeze > requirements.txt
 
 # create a Procfile at the root of the directory.  
 echo "web: gunicorn src.app:app" > Procfile 
+
+#### Send a message - Producer - Window 2
+# This a offline script for sending two messages, you may replay this a you like.
+python src/utils/producer.py
